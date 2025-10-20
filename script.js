@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Lógica del Carrusel (la misma) ---
+    // --- Lógica del Carrusel ---
     const slides = document.querySelectorAll('.carousel-slide');
     let currentSlide = 0;
     const intervalTime = 5000; // 5 segundos
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextSlide, intervalTime);
     }
 
-    // --- NUEVA Lógica del Menú Hamburguesa ---
+    // --- Lógica del Menú Hamburguesa ---
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
 
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const links = navLinks.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
+                // Solo cerrar si estamos en vista móvil (ancho menor o igual a 768px)
                 if (window.innerWidth <= 768) {
                     navLinks.classList.remove('active');
                 }
